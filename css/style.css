@@ -1,0 +1,34 @@
+
+.letraprincipal {
+	font-family: 'Montserrat', sans-serif;
+
+}
+body {
+	background-color: #grey;
+	color: black;
+}
+.fonden{
+	background-color: #000000;
+}
+.n{
+	background-color: #3983F0;
+}
+.t{
+	background-color: #FFE900;
+}
+.d{
+	background-color: #E1007F;
+}
+
+.logo {
+	width: 140px;
+  height: 140px;
+}
+
+
+
+footer {
+	text-align: center;
+	background-color: #6A5ACD;
+
+}
