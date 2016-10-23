@@ -7,13 +7,13 @@ $(document).ready(function(){
       });
     });
 
-//  $('#agregarColeccionBtn').click(function(){
-//      event.preventDefault();
-//      $.post("index.php?action=crear_coleccion",$("#formColeccion").serialize(), function(data){
-//        $('#listaColeccion')html(data);
-//        $('#coleccion').val('');
-//      });
-//  });
+ $('#agregarCategoriaBtn').click(function(){
+     event.preventDefault();
+      console.log("hasta aca funca");
+     $.post("index.php?action=guardar_categoria",$("#formCategoria").serialize(), function(data){
+       alert("se guardo");
+     });
+     });
 
 //  $('.eliminarColeccion').click(function(){
 //    event.preventDefault();

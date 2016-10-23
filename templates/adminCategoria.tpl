@@ -1,6 +1,8 @@
 <h1>Lista Categorias</h1>
 <hr>
 <form id="formCategoria" action="guardar_categoria" method="post">
-    <input type="text" name="categoria" value="" placeholder="Ingrese la categoria">
-    <input type="submit" name="Agregar" value="agregarCategoria">
+    <input type="text" name="categoria" required value="" placeholder="Ingrese la categoria">
+    <input type="submit" name="Agregar" id="agregarCategoriaBtn">
 </form>
+
+<script src="js/ntd.js"></script> <!-- si saco esta linea no puede acceder al action -->

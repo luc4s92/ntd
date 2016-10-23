@@ -16,7 +16,9 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_MOSTRAR_ADMINCAT:
       $catController->mostrarAdminCat();
     break;
-
+  case ConfigApp::$ACTION_GUARDAR_CATEGORIA:
+      $catController->guardarCategoria();
+    break;
   default:
     $ntdcontroller->home();
     break;
