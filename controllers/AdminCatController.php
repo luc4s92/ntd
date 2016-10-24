@@ -22,5 +22,13 @@ class AdminCatController{
     $categorias = $this->modelo->getCategorias();
     $this->vista->listaAdminCat($categorias);
   }
+
+  function borrarCategoria(){
+    $key = $_GET['id_categoria'];
+    $this->modelo->eliminarCategoria($key);
+    $categorias = $this->modelo->getCategorias();
+    $this->vista->listaAdminCat($categorias);
+  }
+
 }
  ?>

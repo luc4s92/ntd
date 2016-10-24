@@ -19,6 +19,9 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_GUARDAR_CATEGORIA:
       $catController->guardarCategoria();
     break;
+    case ConfigApp::$ACTION_ELIMINAR_CATEGORIA:
+        $catController->borrarCategoria();
+      break;
   default:
     $ntdcontroller->home();
     break;

@@ -24,5 +24,11 @@
       $categorias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
       return $categorias;
     }
+
+    function eliminarCategoria($id_categoria){
+      $sentencia = $this->db->prepare("delete from categoria where id_categoria=?");
+      $sentencia->execute(array($id_categoria));
+      return $sentencia->rowCount();
+    }
   }
  ?>

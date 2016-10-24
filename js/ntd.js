@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     $('#adminCategoriaBtn').click(function(){
       event.preventDefault();
-      $.get("index.php?action=mostrar_adminCat",function(data){               //"deberia" cargar el html de categoria
+      $.get("index.php?action=mostrar_adminCat",function(data){               
           $('#cargarContenido').html(data);
       });
     });
@@ -17,12 +17,14 @@ $(document).ready(function(){
      });
      });
 
-//  $('.eliminarColeccion').click(function(){
-//    event.preventDefault();
-//      $.get("index.php?actoin=eliminar_coleccion",{ id_coleccion:$(this).attr("data-idcoleccion")}, function(data){
-//        $('#listaColeccion')html(data);
-//        $('#coleccion').val('');
-//      });
-//  });
+  $('.eliminarCategoria').click(function(){
+   event.preventDefault();
+    console.log("entro al borrar")
+     $.get("index.php?action=eliminar_categoria",{ id_categoria:$(this).attr("data-idcategoria")}, function(data){
+       $('#listaCat').html(data);
+       $('#categorias').val('');
+       console.log("se borro");
+     });
+   });
 
 });
