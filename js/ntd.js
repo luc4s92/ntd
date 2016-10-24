@@ -12,6 +12,8 @@ $(document).ready(function(){
       console.log("hasta aca funca");
      $.post("index.php?action=guardar_categoria",$("#formCategoria").serialize(), function(data){
        alert("se guardo");
+       $('#listaCat').html(data);
+       $('#categorias').val('');
      });
      });
 

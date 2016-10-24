@@ -12,13 +12,15 @@ class AdminCatController{
   }
 
   function mostrarAdminCat(){
-    $this->vista->adminCat();
+    $categorias = $this->modelo->getCategorias();
+    $this->vista->adminCat($categorias);
   }
 
   function guardarCategoria(){
     $categoria = $_POST['categoria'];
     $this->modelo->crearCategoria($categoria);
-    $this->vista->adminCat();
+    $categorias = $this->modelo->getCategorias();
+    $this->vista->listaAdminCat($categorias);
   }
 }
  ?>
