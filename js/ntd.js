@@ -36,11 +36,12 @@ $(document).ready(function(){
      });
    });
 
-   $('#agregarProductoBtn').click(function(){
+   $('#formProducto').submit(function(){
        event.preventDefault();
-        console.log("hasta aca funca");
+       alert($(this).serialize());
+        console.log($(this).serialize());
        $.post("index.php?action=guardar_producto",$("#formProducto").serialize(), function(data){
-         alert("se guardo");
+        // alert("se guardo el producto");
 
        });
        });

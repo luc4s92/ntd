@@ -18,7 +18,7 @@ class AdminProdController{
 
  function guardarProducto(){
    $producto = $_POST['producto'];
-   $id_categoria = $_POST['id_categoria'];
+   $id_categoria = $_POST['categoria'];
    $this->modelo->crearProducto($producto,$id_categoria);
  }
 

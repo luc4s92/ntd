@@ -5,7 +5,7 @@
 
     function __construct(){
         //coneccion con la base de datos
-        $this->db = new PDO('mysql:host=localhost;dbname=ntd_test;charset=utf8', 'root', '');
+        $this->db = new PDO('mysql:host=localhost;dbname=probando;charset=utf8', 'root', '');
 
     }
 
