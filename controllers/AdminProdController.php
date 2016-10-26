@@ -17,9 +17,11 @@ class AdminProdController{
   }
 
  function guardarProducto(){
-   $producto = $_POST['producto'];
-   $id_categoria = $_POST['categoria'];
+
+   $producto = $_REQUEST['producto'];
+   $id_categoria = $_REQUEST['categoria'];
    $this->modelo->crearProducto($producto,$id_categoria);
+
  }
 
 }

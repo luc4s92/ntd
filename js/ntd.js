@@ -9,9 +9,7 @@ $(document).ready(function(){
 
  $('#agregarCategoriaBtn').click(function(){
      event.preventDefault();
-      console.log("hasta aca funca");
      $.post("index.php?action=guardar_categoria",$("#formCategoria").serialize(), function(data){
-       alert("se guardo");
        $('#listaCat').html(data);
        $('#categorias').val('');
      });
@@ -36,13 +34,13 @@ $(document).ready(function(){
      });
    });
 
-   $('#formProducto').submit(function(){
+   $('#guardarProductoBtn').click(function(){
        event.preventDefault();
-       alert($(this).serialize());
-        console.log($(this).serialize());
-       $.post("index.php?action=guardar_producto",$("#formProducto").serialize(), function(data){
-        // alert("se guardo el producto");
+       //alert($('#formProducto').serialize());
 
+       $.post("index.php?action=guardar_producto",$("#formProducto").serialize(), function(data){
+         console.log($('#formProducto').serialize());
+        // alert("se guardo el producto");
        });
        });
 });

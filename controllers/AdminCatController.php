@@ -17,6 +17,7 @@ class AdminCatController{
   }
 
   function guardarCategoria(){
+
     $categoria = $_POST['categoria'];
     $this->modelo->crearCategoria($categoria);
     $categorias = $this->modelo->getCategorias();

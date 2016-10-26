@@ -43,6 +43,7 @@
 	<section class="info row">
 		<article class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
 			<div id="cargarContenido">
+				
 				<h1>Aca va a ir algo lindo</h1>
 			</div>
 		</article>

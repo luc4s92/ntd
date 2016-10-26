@@ -27,7 +27,7 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
     case ConfigApp::$ACTION_MOSTRAR_ADMINPROD:
         $prodController->mostrarAdminProd();
         break;
-    case ConfigApp::$ACTION_MOSTRAR_ADMINPROD:
+    case ConfigApp::$ACTION_GUARDAR_PRODUCTO:
         $prodController->guardarProducto();
         break;
   default:

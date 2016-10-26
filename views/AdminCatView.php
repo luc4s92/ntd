@@ -12,6 +12,7 @@ require_once ('libs/Smarty.class.php');
       $this->smarty->assign('categorias',$categorias);
       $this->smarty->display('adminCategoria.tpl');
     }
+
     function listaAdminCat($categorias){
       $this->smarty->assign('categorias',$categorias);
       $this->smarty->display('listacategorias.tpl');
