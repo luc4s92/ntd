@@ -5,6 +5,7 @@ class ConfigApp{
   public static $ACTION_MOSTRAR_ADMINCAT= 'mostrar_adminCat';
   public static $ACTION_GUARDAR_CATEGORIA= 'guardar_categoria';
   public static $ACTION_ELIMINAR_CATEGORIA= 'eliminar_categoria';
+  public static $ACTION_MOSTRAR_ADMINPROD= 'mostrar_adminProd';
+  public static $ACTION_GUARDAR_PRODUCTO= 'guardar_producto';
 }
-
  ?>

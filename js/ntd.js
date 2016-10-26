@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     $('#adminCategoriaBtn').click(function(){
       event.preventDefault();
-      $.get("index.php?action=mostrar_adminCat",function(data){               
+      $.get("index.php?action=mostrar_adminCat",function(data){
           $('#cargarContenido').html(data);
       });
     });
@@ -26,5 +26,22 @@ $(document).ready(function(){
        console.log("se borro");
      });
    });
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
+   $('#adminProductoBtn').click(function(){
+     event.preventDefault();
+     $.get("index.php?action=mostrar_adminProd",function(data){
+         $('#cargarContenido').html(data);
+         $('#categoria').val('');
+     });
+   });
+
+   $('#agregarProductoBtn').click(function(){
+       event.preventDefault();
+        console.log("hasta aca funca");
+       $.post("index.php?action=guardar_producto",$("#formProducto").serialize(), function(data){
+         alert("se guardo");
+
+       });
+       });
 });
