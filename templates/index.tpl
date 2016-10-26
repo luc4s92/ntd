@@ -31,7 +31,7 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						      <ul class="nav navbar-nav" "navbar-rigth">
-							        <li><a   href="#" >Coleccion</a></li>
+							        <li><a   href="#" >Productos</a></li>
 							        <li><a  id="adminProductoBtn" href="#">Admin Productos </a></li>
 							        <li><a   href="#">Contacto</a></li>
 											<li><a  id="adminCategoriaBtn" href="#">Admin Categoria</a></li>
@@ -43,7 +43,7 @@
 	<section class="info row">
 		<article class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
 			<div id="cargarContenido">
-				
+
 				<h1>Aca va a ir algo lindo</h1>
 			</div>
 		</article>
