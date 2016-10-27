@@ -25,6 +25,27 @@ $(function renderPagina(){
        renderPagina();
      });
    });
+   
+   $('.updateCat').click(function(){
+    event.preventDefault();
+      $.get("index.php?action=update_cat",{ id_categoria:$(this).attr("data-idcategoria")}, function(data){
+        $('#cargarContenido').html(data);
+        renderPagina();
+      });
+    });
+
+    $('#ActualizarCategoriaBtn').click(function(){
+     event.preventDefault();
+       alert("no anda");
+       var data = {
+          id_categoria:$(this).attr("data-idcategoria"),
+          nuevacat:$("#nuevacat").val()
+        };
+        console.log(data);
+       $.post("index.php?action=actualizar_categoria",data, function(data){
+         renderPagina();
+       });
+     });
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
    $('#adminProductoBtn').click(function(){

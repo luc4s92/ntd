@@ -11,9 +11,10 @@
       {/foreach}
     </select>
   </p>
-    <input type="file" name="imagenes[]" required value="" >
+    <input type="file" name="imagenes[]" required value="" multiple />
     <input type="submit" name="Agregar" id="guardarProductoBtn">
 </form>
+
 <div id="listaProd">
   {include file='listaproductos.tpl'}
 </div>
