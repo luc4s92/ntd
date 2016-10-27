@@ -24,11 +24,20 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
     case ConfigApp::$ACTION_ELIMINAR_CATEGORIA:
         $catController->borrarCategoria();
       break;
+    case ConfigApp::$ACTION_UPDATE_CAT:
+        $catController->updateCat();
+      break;
+    case ConfigApp::$ACTION_ACTUALIZAR_CATEGORIA:
+        $catController->actualizarCat();
+      break;
     case ConfigApp::$ACTION_MOSTRAR_ADMINPROD:
         $prodController->mostrarAdminProd();
         break;
     case ConfigApp::$ACTION_GUARDAR_PRODUCTO:
         $prodController->guardarProducto();
+        break;
+    case ConfigApp::$ACTION_ELIMINAR_PRODUCTO:
+        $prodController->borrarProducto();
         break;
   default:
     $ntdcontroller->home();

@@ -9,4 +9,4 @@
 <div id="listaCat">
   {include file='listacategorias.tpl'}
 </div>
-<script src="js/ntd.js"></script> <!-- si saco esta linea no puede acceder al action -->
+ <!-- si saco esta linea no puede acceder al action -->

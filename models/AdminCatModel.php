@@ -25,6 +25,19 @@
       return $categorias;
     }
 
+    function getCategoria($id_categoria){
+      $sentencia = $this->db->prepare( "select * from categoria where id_categoria=?");
+      $sentencia->execute(array($id_categoria));
+      return $sentencia->fetch(PDO::FETCH_ASSOC);
+    }
+
+    function editarCategoria($id_categoria,$nuevacat){
+      print_r($id_categoria);
+      print_r($nuevacat);
+      $sentencia = $this->db->prepare("update categoria  set nombre=? where id_categoria=?");
+      $sentencia->execute(array($nuevacat,$id_categoria));
+    }
+
     function eliminarCategoria($id_categoria){
       $sentencia = $this->db->prepare("delete from categoria where id_categoria=?");
       $sentencia->execute(array($id_categoria));

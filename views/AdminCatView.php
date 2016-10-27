@@ -17,5 +17,9 @@ require_once ('libs/Smarty.class.php');
       $this->smarty->assign('categorias',$categorias);
       $this->smarty->display('listacategorias.tpl');
     }
+    function editCat($categoria){
+      $this->smarty->assign('categoria',$categoria);
+      $this->smarty->display('actualizarCat.tpl');
+    }
   }
 ?>
