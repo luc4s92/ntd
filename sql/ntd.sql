@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-10-2016 a las 05:42:58
--- Versión del servidor: 10.1.13-MariaDB
--- Versión de PHP: 5.6.23
+-- Tiempo de generación: 27-10-2016 a las 23:13:06
+-- Versión del servidor: 10.1.16-MariaDB
+-- Versión de PHP: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -36,8 +36,9 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`id_categoria`, `nombre`) VALUES
-(27, 'hola'),
-(34, 'merca');
+(42, 'Bolsos'),
+(39, 'Cartera'),
+(40, 'Zapatos');
 
 -- --------------------------------------------------------
 
@@ -51,6 +52,15 @@ CREATE TABLE `imagen` (
   `fk_id_producto` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `imagen`
+--
+
+INSERT INTO `imagen` (`id_imagen`, `path`, `fk_id_producto`) VALUES
+(9, 'images/58126bcedb7b0_ntd3.jpg', 9),
+(10, 'images/58126bf5af7dc_ntd1.jpg', 10),
+(14, 'images/58126c5e8efec_ntd2.jpg', 14);
+
 -- --------------------------------------------------------
 
 --
@@ -62,6 +72,15 @@ CREATE TABLE `producto` (
   `nombre` varchar(30) NOT NULL,
   `fk_id_categoria` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`id_producto`, `nombre`, `fk_id_categoria`) VALUES
+(9, 'Bolso Notebook', 42),
+(10, 'Zapatos Gamuza', 40),
+(14, 'Cartera Gamuza Grande', 39);
 
 --
 -- Índices para tablas volcadas
@@ -97,17 +116,17 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_categoria` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 --
 -- AUTO_INCREMENT de la tabla `imagen`
 --
 ALTER TABLE `imagen`
-  MODIFY `id_imagen` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_imagen` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- Restricciones para tablas volcadas
 --

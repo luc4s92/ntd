@@ -39,6 +39,12 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
     case ConfigApp::$ACTION_ELIMINAR_PRODUCTO:
         $prodController->borrarProducto();
         break;
+    case ConfigApp::$ACTION_MOSTRAR_PRODUCTOS:
+        $ntdcontroller->verProductos();
+        break;
+    case ConfigApp::$ACTION_CONTACTO:
+        $ntdcontroller->mostrar_contacto();
+        break;
   default:
     $ntdcontroller->home();
     break;

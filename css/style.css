@@ -3,9 +3,16 @@
 	font-family: 'Montserrat', sans-serif;
 
 }
+
+.imgpequenia {
+		width: 100px;
+		height: 100px;
+
+}
+
 body {
-	background-color: #grey;
-	color: black;
+	background-color: #302C36;
+	color: #948383;
 }
 .fonden{
 	background-color: #000000;
@@ -20,15 +27,28 @@ body {
 	background-color: #E1007F;
 }
 
+.imagenhome {
+	margin: 0 auto
+}
+
 .logo {
 	width: 140px;
   height: 140px;
 }
 
+.contenedor {
+background-color: #6A5ACD;
+padding: center-block;
 
+}
 
 footer {
 	text-align: center;
-	background-color: #6A5ACD;
+	background-color: #302C36;
 
+}
+
+h3 {
+
+	color: #white;
 }

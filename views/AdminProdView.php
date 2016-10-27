@@ -8,13 +8,12 @@ class AdminProdView{
     $this->smarty = new Smarty();
   }
 
-  function adminProd($categorias,$productos){
+  function adminProd($categorias){
     $this->smarty->assign('categorias',$categorias);
-    $this->smarty->assign('productos',$productos);
     $this->smarty->display('adminProductos.tpl');
   }
-  function listaAdminProd($productos){
-    $this->smarty->assign('productos',$productos);
+  function listaAdminProd($categorias){
+    $this->smarty->assign('categorias',$categorias);
     $this->smarty->display('listaproductos.tpl');
   }
 }

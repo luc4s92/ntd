@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  "use strict";
+
 $(function renderPagina(){
     $('#adminCategoriaBtn').click(function(){
       event.preventDefault();
@@ -25,7 +27,7 @@ $(function renderPagina(){
        renderPagina();
      });
    });
-   
+
    $('.updateCat').click(function(){
     event.preventDefault();
       $.get("index.php?action=update_cat",{ id_categoria:$(this).attr("data-idcategoria")}, function(data){
@@ -52,17 +54,65 @@ $(function renderPagina(){
      event.preventDefault();
      $.get("index.php?action=mostrar_adminProd",function(data){
          $('#cargarContenido').html(data);
-         $('#categoria').val('');
+         $('#listaProd').val('');
          renderPagina();
      });
    });
 
-   $('#guardarProductoBtn').click(function(){
-       event.preventDefault();
-       $.post("index.php?action=guardar_producto",$("#formProducto").serialize(), function(data){
-         console.log($('#formProducto').serialize());
+   $('#Productos').click(function(){
+     event.preventDefault();
+     $.get("index.php?action=mostrar_productos",function(data){
+         $('#cargarContenido').html(data);
+         $('#listaProd').val('');
          renderPagina();
-       });
-       });
+     });
+   });
+
+   $('#formProducto').submit(function(ev){
+     event.preventDefault();
+    var formData = new FormData(this);
+     $.ajax({
+       method: "POST",
+       contentType: false,
+       processData: false,
+       data: formData,
+       cache: false,
+       url: "index.php?action=guardar_producto",
+       success: function(data){
+         alert("El mensaje ha sido enviado con exito.");
+         $("#prod").val("");
+         $("#categoria").val("");
+         $("#img").val("");
+         },
+
+   });
+   renderPagina();
+ });
+  // $('#formProducto').submit(function(){
+  //     event.preventDefault();
+  //     $.post("index.php?action=guardar_producto",$("#formProducto").serialize(), function(data){
+  //       console.log($('#formProducto').serialize());
+  //       renderPagina();
+  //     });
+  //     });
+
+  $('.eliminarProducto').click(function(){
+   event.preventDefault();
+     $.get("index.php?action=eliminar_producto",{ id_producto:$(this).attr("data-idproducto")}, function(data){
+       $('#listaProd').html(data);
+       $('#productos').val('');
+       renderPagina();
+     });
+   });
+
+   $('#mostrarContactoBtn').click(function(){
+     event.preventDefault();
+     $.get("index.php?action=mostrar_contacto",function(data){
+     $('#cargarContenido').html(data);
+     renderPagina();
+      });
+    });
+
+ 
   });
 });

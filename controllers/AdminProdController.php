@@ -13,8 +13,7 @@ class AdminProdController{
 
   function mostrarAdminProd(){
     $categorias = $this->modelo->getCategorias();
-    $productos = $this->modelo->getProductos();
-    $this->vista->adminProd($categorias,$productos);
+    $this->vista->adminProd($categorias);
   }
 
   function getImagenesVerificadas($imagenes){
@@ -30,6 +29,7 @@ class AdminProdController{
      return $imagenesVerificadas;
    }
  function guardarProducto(){
+
    $producto = $_POST['producto'];
    $id_categoria = $_POST['categoria'];
    if(isset($_FILES['imagenes'])){
@@ -44,7 +44,7 @@ class AdminProdController{
  function borrarProducto(){
    $key = $_GET['id_producto'];
    $this->modelo->eliminarProducto($key);
-   $productos = $this->modelo->getProductos();
+   $productos = $this->modelo->getCategorias();
    $this->vista->listaAdminProd($productos);
  }
 

@@ -6066,7 +6066,7 @@ button.close {
   border-left-color: #fff;
 }
 .carousel {
-  position: relative;
+  position: center-block;
 }
 .carousel-inner {
   position: relative;
