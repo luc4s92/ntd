@@ -4,6 +4,7 @@
 
 }
 
+
 .imgpequenia {
 		width: 100px;
 		height: 100px;
@@ -14,18 +15,7 @@ body {
 	background-color: #302C36;
 	color: #948383;
 }
-.fonden{
-	background-color: #000000;
-}
-.n{
-	background-color: #3983F0;
-}
-.t{
-	background-color: #FFE900;
-}
-.d{
-	background-color: #E1007F;
-}
+
 
 .imagenhome {
 	margin: 0 auto
