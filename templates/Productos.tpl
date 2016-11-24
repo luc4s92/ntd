@@ -13,6 +13,8 @@
         <img class="imgpequenia" src="{$imagen['path']}"  class="img-thumbnail">
         {/foreach}
       </li>
+      <hr>
+      <a class="verProducto" href="#" data-idproducto="{$producto['id_producto']}" >Ver Producto</a>
     </li>
        {/foreach}
     </li>

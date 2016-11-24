@@ -5,6 +5,7 @@
 	<title> No Te Detengas </title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 
 	<header>
@@ -32,6 +33,7 @@
 						      <ul class="nav navbar-nav navbar-right">
 							        <li><a   id="Productos" href="#" >Productos</a></li>
 											<li><a  id="mostrarContactoBtn" href="#">Contacto</a></li>
+											<li><a  id="login" href="#">Login</a></li>
 											<li class="dropdown">
 													<a class="dropdown-toggle active" data-toggle="dropdown" href="#"> Administracion <span class="caret"></span></a>
 													<ul class="dropdown-menu">
@@ -39,7 +41,7 @@
 													<li role="presentation" class="divider"></li>
 													<li><a  id="adminCategoriaBtn" href="#"> Admin Categoria </a></li>
 													</ul>
-											</li>
+											</li> 
 								 </ul>
 			    	</div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -56,7 +58,7 @@
 
 	<footer>
 			<div class="conteiner letraprincipal">
-			<h5> &copy No Te Detengas Argentina. Todos los derechos reservados. </h5>
+			<h5> copy No Te Detengas Argentina. Todos los derechos reservados. </h5>
 			<h5> - Contacto : notedetengas2011@gmail.com - </h5>
 	</footer>
 
