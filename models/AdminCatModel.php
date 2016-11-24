@@ -1,6 +1,6 @@
 <?php
   class AdminCatModel{
-    private $categorias;
+
     private $db;
 
     function __construct(){
@@ -43,5 +43,14 @@
       $sentencia->execute(array($id_categoria));
       return $sentencia->rowCount();
     }
+    function getPrivilegio($user){
+      $consulta = $this->db->prepare("SELECT * FROM usuario WHERE email = ?");
+      $consulta->execute(array($user));
+      return $consulta->fetch();
+    }
+    function getRol ($user) {
+    $usuario = $this->getPrivilegio($user);
+    return $usuario['privilegio'];
+  }
   }
  ?>

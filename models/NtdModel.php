@@ -24,6 +24,14 @@ class NtdModel{
     return $productos;
 
   }
+  function getProducto($id_producto){
+    $sentencia = $this->db->prepare( "select * from producto where id_producto=?");
+    $sentencia->execute(array($id_producto));
+    $producto = $sentencia->fetch(PDO::FETCH_ASSOC);
+    $producto['imagenes']= $this->getImagenes($id_producto);
+    return $producto;
+  }
+
   function getCategorias(){
     //obtiene la lista de categorias de la tabla
     $sentencia = $this->db->prepare("select * from categoria");

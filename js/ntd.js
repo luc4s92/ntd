@@ -36,9 +36,17 @@ $(function renderPagina(){
       });
     });
 
+    $('.verProducto').click(function(){
+     event.preventDefault();
+       $.get("index.php?action=ver_producto",{ id_producto:$(this).attr("data-idproducto")}, function(data){
+         $('#cargarContenido').html(data);
+         renderPagina();
+       });
+     });
+
     $('#ActualizarCategoriaBtn').click(function(){
      event.preventDefault();
-       alert("no anda");
+
        var data = {
           id_categoria:$(this).attr("data-idcategoria"),
           nuevacat:$("#nuevacat").val()
@@ -48,6 +56,12 @@ $(function renderPagina(){
          renderPagina();
        });
      });
+     $('#formComentario').submit(function(ev){
+       event.preventDefault();
+       console.log($('#formComentario').serialize());
+           renderPagina();
+       });
+
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
    $('#adminProductoBtn').click(function(){
@@ -55,6 +69,14 @@ $(function renderPagina(){
      $.get("index.php?action=mostrar_adminProd",function(data){
          $('#cargarContenido').html(data);
          $('#listaProd').val('');
+         renderPagina();
+     });
+   });
+
+   $('#login').click(function(){
+     event.preventDefault();
+     $.get("index.php?action=mostrar_login",function(data){
+         $('#cargarContenido').html(data);
          renderPagina();
      });
    });
@@ -88,13 +110,6 @@ $(function renderPagina(){
    });
    renderPagina();
  });
-  // $('#formProducto').submit(function(){
-  //     event.preventDefault();
-  //     $.post("index.php?action=guardar_producto",$("#formProducto").serialize(), function(data){
-  //       console.log($('#formProducto').serialize());
-  //       renderPagina();
-  //     });
-  //     });
 
   $('.eliminarProducto').click(function(){
    event.preventDefault();
@@ -113,6 +128,32 @@ $(function renderPagina(){
       });
     });
 
- 
+    $('#register').click(function(){
+      event.preventDefault();
+      $.get("index.php?action=mostrar_registro",function(data){
+      $('#cargarContenido').html(data);
+      renderPagina();
+       });
+     });
+
+     $('#agregarUsuarioBtn').click(function(){
+         event.preventDefault();
+         alert('entro');
+         $.post("index.php?action=guardar_usuario",$("#formUsuario").serialize(), function(data){
+           $('#cargarContenido').html(data);
+           renderPagina();
+         });
+         });
+
+     $('#LoginBtn').click(function(){
+          event.preventDefault();
+          console.log($('#formLogin').serialize());
+         $.get("index.php?action=loguearse",$("#formLogin").serialize(),function(data){
+           console.log($('#formLogin').serialize());
+         $('#cargarContenido').html(data);
+          renderPagina();
+          });
+        });
+
   });
 });

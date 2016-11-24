@@ -11,7 +11,7 @@ class AdminProdModel{
   $sentencia = $this->db->prepare( "select * from imagen where fk_id_producto=?");
    $sentencia->execute(array($id_producto));
    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
-     
+
   }
 
   function getProductos($id_categoria){
@@ -35,7 +35,6 @@ class AdminProdModel{
     return $categorias;
 
   }
-
 
 
   function crearProducto($producto,$id_categoria,$imagenes){
