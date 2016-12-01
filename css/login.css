@@ -1,46 +1,7 @@
-
-.letraprincipal {
-	font-family: 'Montserrat', sans-serif;
-
-}
-
-
-.imgpequenia {
-		width: 100px;
-		height: 100px;
-
-}
-
 body {
-	background-color: #302C36;
-	color: #948383;
-}
-
-
-.imagenhome {
-	margin: 0 auto
-}
-
-.logo {
-	width: 140px;
-  height: 140px;
-}
-
-.contenedor {
-background-color: #6A5ACD;
-padding: center-block;
-
-}
-
-footer {
-	text-align: center;
-	background-color: #302C36;
-
-}
-
-h3 {
-
-	color: #white;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
 }
 
 .form-signin {
