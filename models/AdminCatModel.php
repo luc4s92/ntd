@@ -32,8 +32,6 @@
     }
 
     function editarCategoria($id_categoria,$nuevacat){
-      print_r($id_categoria);
-      print_r($nuevacat);
       $sentencia = $this->db->prepare("update categoria  set nombre=? where id_categoria=?");
       $sentencia->execute(array($nuevacat,$id_categoria));
     }

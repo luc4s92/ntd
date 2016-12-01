@@ -1,6 +1,7 @@
 <?php
 define("HOST", "localhost");
-define("USUARIO", "root");
-define("DBPASS", "");
-define("DBNAME", "ntd");
+define("USUARIO", "localhost");
+define("DBPASS", "root");
+define("DBNAME", "");
 ?>
+ntd");

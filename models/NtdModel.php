@@ -43,5 +43,18 @@ class NtdModel{
     return $categorias;
 
   }
+  function getProd(){
+    $sentencia = $this->db->prepare("select * from producto");
+    $sentencia->execute();
+    $productos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    return $productos;
+  }
+  function getCategoria($id_categoria){
+    $sentencia = $this->db->prepare( "select * from categoria where id_categoria=?");
+    $sentencia->execute(array($id_categoria));
+    $categoria = $sentencia->fetch(PDO::FETCH_ASSOC);
+    $categoria['productos']= $this->getProductos($id_categoria);
+    return $categoria;
+  }
 }
  ?>

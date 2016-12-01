@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-10-2016 a las 23:13:06
--- Versión del servidor: 10.1.16-MariaDB
--- Versión de PHP: 5.6.24
+-- Tiempo de generación: 01-12-2016 a las 07:05:18
+-- Versión del servidor: 10.1.13-MariaDB
+-- Versión de PHP: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -39,6 +39,19 @@ INSERT INTO `categoria` (`id_categoria`, `nombre`) VALUES
 (42, 'Bolsos'),
 (39, 'Cartera'),
 (40, 'Zapatos');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentario`
+--
+
+CREATE TABLE `comentario` (
+  `id_comentario` int(20) NOT NULL,
+  `coment` varchar(100) NOT NULL,
+  `puntaje` int(10) NOT NULL,
+  `fk_id_producto` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -82,6 +95,28 @@ INSERT INTO `producto` (`id_producto`, `nombre`, `fk_id_categoria`) VALUES
 (10, 'Zapatos Gamuza', 40),
 (14, 'Cartera Gamuza Grande', 39);
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id_usuario` int(10) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `privilegio` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `email`, `password`, `privilegio`) VALUES
+(16, 'lucas.acdc92@gmail.com', '$2y$10$z.BonOQpSAREpK5LdxPWm.9stafHi4IUasrApRNyqf0yrcUgZoSlC', 1),
+(17, 'lucas.acdc92@gmail.comz', '$2y$10$nVBWcbOoCJRehN4o/EYIOeIj.H7IrrrPHkTKnjtRhMZKE0nkbLZDu', 2),
+(18, 'lucas.acdc92@gmail.como', '$2y$10$FRujf0R2tPlWxSLdsiqaieBB53FUmCNyGhzjki3hGHao47CRSLC0e', 3);
+
 --
 -- Índices para tablas volcadas
 --
@@ -92,6 +127,13 @@ INSERT INTO `producto` (`id_producto`, `nombre`, `fk_id_categoria`) VALUES
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_categoria`),
   ADD UNIQUE KEY `nombre` (`nombre`);
+
+--
+-- Indices de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD PRIMARY KEY (`id_comentario`),
+  ADD KEY `fk_id_producto` (`fk_id_producto`);
 
 --
 -- Indices de la tabla `imagen`
@@ -109,6 +151,13 @@ ALTER TABLE `producto`
   ADD KEY `fk_id_categoria_2` (`fk_id_categoria`);
 
 --
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id_usuario`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -118,18 +167,34 @@ ALTER TABLE `producto`
 ALTER TABLE `categoria`
   MODIFY `id_categoria` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 --
+-- AUTO_INCREMENT de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  MODIFY `id_comentario` int(20) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `imagen`
 --
 ALTER TABLE `imagen`
-  MODIFY `id_imagen` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_imagen` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
   MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id_usuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+--
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`fk_id_producto`) REFERENCES `producto` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `imagen`
