@@ -8,4 +8,4 @@
     </li>
   {/foreach}
 </ul>
- <!--mismo problema que en el adminCat.tpl si saco ese link solo me deja borrar 1 y tengo que recargar la pagina -->
+ 

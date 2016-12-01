@@ -1,4 +1,6 @@
+<div >
 
+  <span class="pull-right">Hola <strong>{$email}</strong>! <a class="logout" href="">Logout</a></span>
 <h1>Lista Categorias</h1>
 
 <hr>
@@ -9,4 +11,5 @@
 <div id="listaCat">
   {include file='listacategorias.tpl'}
 </div>
- <!-- si saco esta linea no puede acceder al action -->
+
+</div>

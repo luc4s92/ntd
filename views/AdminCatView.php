@@ -9,6 +9,7 @@ require_once ('libs/Smarty.class.php');
     }
 
     function adminCat($categorias){
+      $this->smarty->assign('email', $_SESSION["email"]);
       $this->smarty->assign('categorias',$categorias);
       $this->smarty->display('adminCategoria.tpl');
     }

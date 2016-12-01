@@ -1,73 +1,133 @@
 <?php
-require ('controllers/NtdController.php');
-require ('controllers/AdminCatController.php');
-require ('controllers/AdminProdController.php');
-require ('controllers/login_controller.php');
-require ('config/ConfigApp.php');
+include_once 'config/ConfigApp.php';
+include_once 'controllers/NtdController.php';
+include_once 'controllers/LoginController.php';
+include_once 'controllers/AdminCatController.php';
+include_once 'controllers/AdminProdController.php';
+include_once 'controllers/AdminUsuariosController.php';
 
-$ntdcontroller = new NtdController();
-$catController = new AdminCatController();
-$prodController = new AdminProdController();
-$loginController = new LoginController();
-
-if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
-    $ntdcontroller->home();
-  die();
+if(!array_key_exists(ConfigApp::$ACTION, $_REQUEST) ||
+$_REQUEST[ConfigApp::$ACTION] == ConfigApp::$ACTION_DEFAULT)
+{
+  $NtdController = new NtdController();
+  $NtdController->mostrarHome();
 }
-
-switch ($_REQUEST[ConfigApp::$ACTION]) {
-  //agregar las acciones que hacen falta
-  case ConfigApp::$ACTION_MOSTRAR_ADMINCAT:
-      $catController->mostrarAdminCat();
-    break;
-  case ConfigApp::$ACTION_GUARDAR_CATEGORIA:
-      $catController->guardarCategoria();
-    break;
-    case ConfigApp::$ACTION_ELIMINAR_CATEGORIA:
-        $catController->borrarCategoria();
+else {
+switch ($_REQUEST[ConfigApp::$ACTION]){
+  //  case ConfigApp::$ACTION_MOSTRAR_LOGIN:
+    //  $NtdController = new LoginController();
+      //$NtdController->login();
+      //break;
+    case ConfigApp::$ACTION_LOGIN:
+      $NtdController = new LoginController();
+      $NtdController->login();
       break;
-    case ConfigApp::$ACTION_UPDATE_CAT:
-        $catController->updateCat();
+    case ConfigApp::$ACTION_LOGOUT:
+      $NtdController = new LoginController();
+      $NtdController->logout();
       break;
-    case ConfigApp::$ACTION_ACTUALIZAR_CATEGORIA:
-        $catController->actualizarCat();
+    case ConfigApp::$ACTION_MOSTRAR_ADMINCAT:
+      $NtdController = new AdminCatController();
+      $NtdController->mostrarAdminCat();
+      break;
+    case ConfigApp::$ACTION_MOSTRAR_PRODUCTOS:
+      $NtdController = new NtdController();
+      $NtdController->verProductos();
+      break;
+    case ConfigApp::$ACTION_MOSTRAR_HOME:
+      $NtdController = new NtdController();
+      $NtdController->verHome();
+      break;
+    case ConfigApp::$ACTION_CONTACTO:
+      $NtdController = new NtdController();
+      $NtdController->mostrar_contacto();
       break;
     case ConfigApp::$ACTION_MOSTRAR_ADMINPROD:
-        $prodController->mostrarAdminProd();
+      $NtdController = new AdminProdController();
+      $NtdController->mostrarAdminProd();
+      break;
+    case ConfigApp::$ACTION_VER_PRODUCTO:
+      $NtdController = new NtdController();
+      $NtdController->verProducto();
         break;
+    case ConfigApp::$ACTION_PRODUCTOS_CATEGORIA:
+      $NtdController = new NtdController();
+      $NtdController->verProductosCat();
+        break;
+    case ConfigApp::$ACTION_GUARDAR_CATEGORIA:
+    $NtdController = new AdminCatController();
+      $NtdController->guardarCategoria();
+        break;
+    case ConfigApp::$ACTION_ELIMINAR_CATEGORIA:
+    $NtdController = new AdminCatController();
+      $NtdController->borrarCategoria();
+        break;
+    case ConfigApp::$ACTION_UPDATE_CAT:
+    $NtdController = new AdminCatController();
+      $NtdController->updateCat();
+        break;
+    case ConfigApp::$ACTION_ACTUALIZAR_CATEGORIA:
+    $NtdController = new AdminCatController();
+      $NtdController->actualizarCat();
+        break;
+
     case ConfigApp::$ACTION_GUARDAR_PRODUCTO:
-        $prodController->guardarProducto();
+        $NtdController = new AdminProdController();
+        $NtdController->guardarProducto();
         break;
+
     case ConfigApp::$ACTION_ELIMINAR_PRODUCTO:
-        $prodController->borrarProducto();
+        $NtdController = new AdminProdController();
+        $NtdController->borrarProducto();
+
         break;
-    case ConfigApp::$ACTION_MOSTRAR_PRODUCTOS:
-        $ntdcontroller->verProductos();
-        break;
-    case ConfigApp::$ACTION_VER_PRODUCTO: //aca qudede
-        $ntdcontroller->verProducto();
-        break;
-    case ConfigApp::$ACTION_CONTACTO:
-        $ntdcontroller->mostrar_contacto();
-        break;
-    case ConfigApp::$ACTION_LOGIN:
-        $loginController->login();
+   case ConfigApp::$ACTION_ELIMINAR_IMAGEN:
+        $NtdController = new AdminProdController();
+        $NtdController->borrarImagen();
         break;
     case ConfigApp::$ACTION_MOSTRAR_REGISTRO:
-        $loginController->mostrarRegistro();
+        $NtdController = new LoginController();
+        $NtdController->mostrarRegistro();
+        break;
+    case ConfigApp::$ACTION_MOSTRAR_ADMIN_USUARIOS:
+       $NtdController = new AdminUsuariosController();
+       $NtdController->listarUsuarios();
+        break;
+    case ConfigApp::$ACTION_MOSTRAR_LOGIN:
+        $NtdController = new LoginController();
+        $NtdController->mostrarlogin();
+        break;
+    case ConfigApp::$ACTION_LOGOUT:
+        $NtdController = new LoginController();
+        $NtdController->logout();
         break;
     case ConfigApp::$ACTION_GUARDAR_USUARIO:
-        $loginController->guardarUsuario();
+        $NtdController = new LoginController();
+        $NtdController->guardarUsuario();
         break;
-    case ConfigApp::$ACTION_LOGUEARSE:
-        $loginController->logueate();
+
+    case ConfigApp::$ACTION_UPDATE_USUARIO:
+        $NtdController = new AdminUsuariosController();
+        $NtdController->EditUsuario();
         break;
-    case ConfigApp::$ACTION_MOSTRAR_ADMIN:
-        $loginController->loguinAdmin(); //capaz que la saco
+
+    case ConfigApp::$ACTION_UPDATE_PROD:
+        $NtdController = new AdminProdController();
+        $NtdController->updateProd();
         break;
-  default:
-    $ntdcontroller->home();
-    break;
+
+    case ConfigApp::$ACTION_ACTUALIZAR_PRODUCTO:
+        $NtdController = new AdminProdController();
+        $NtdController->actualizarProd();
+        break;
+    default:
+      echo 'Pagina no encontrada';
+      break;
+  }
+
 }
 
- ?>
+
+
+
+?>
