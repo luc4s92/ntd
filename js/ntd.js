@@ -1,5 +1,7 @@
 $(document).ready(function(){
   "use strict";
+/*Funcion para renderizar la página*/
+/*Botón que muestra la nueva sección de la página*/
 
 $(function renderPagina(){
     $('#adminCategoriaBtn').click(function(){
@@ -25,6 +27,7 @@ $(function renderPagina(){
      });
      });
      /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+     /* Agregar comentario GIT*/
 
      var template;
      $.ajax({ url: 'js/templates/comentarios.mst',
