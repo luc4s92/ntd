@@ -112,7 +112,8 @@ $('#AdminUsuarios').click(function(){
      renderPagina();
    });
  });
-  /* ---------------------------------------------------------------------------------------------------------------*/
+  /*Funcion categoria*/
+ /* ---------------------------------------------------------------------------------------------------------------*/
   $('.eliminarCategoria').click(function(){
    event.preventDefault();
      $.get("index.php?action=eliminar_categoria",{ id_categoria:$(this).attr("data-idcategoria")}, function(data){
