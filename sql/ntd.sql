@@ -215,3 +215,4 @@ ALTER TABLE `producto`
 
 /*Agregue la tabla nueva seccion */
 /*Agregue la columna "titulo" a la nueva tabla*/
+/*Agregue la columna "descripcion" a la nueva tabla*/
