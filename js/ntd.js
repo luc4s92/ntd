@@ -1,5 +1,6 @@
 $(document).ready(function(){
   "use strict";
+/*Funcion para renderizar la página*/
 
 $(function renderPagina(){
     $('#adminCategoriaBtn').click(function(){
