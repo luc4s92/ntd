@@ -4,7 +4,7 @@ include_once 'views/NtdView.php';
 include_once 'models/NtdModel.php';
 
 class NtdController   {
-
+// Función que muestra la nueva sección de la página
   function __construct() {
     $this->modelo = new NtdModel();
     $this->vista = new NtdView();
