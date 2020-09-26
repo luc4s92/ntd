@@ -1,6 +1,6 @@
 
 .letraprincipal {
-	font-family: 'Montserrat', sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 
 }
 
@@ -13,7 +13,8 @@
 
 body {
 	background-color: #302C36;
-	color: #948383;
+  color: green;
+  
 }
 
 
@@ -34,7 +35,7 @@ padding: center-block;
 
 footer {
 	text-align: center;
-	background-color: #302C36;
+	background-color: blue;
 
 }
 

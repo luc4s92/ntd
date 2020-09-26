@@ -1,7 +1,7 @@
 <?php
 
 class ConfigApp {
-
+// Mostras sección nueva de la página//
   public static $ACTION = 'action';
   public static $ACTION_DEFAULT = 'home';
   public static $ACTION_MOSTRAR_LOGIN = 'mostrar_login';
