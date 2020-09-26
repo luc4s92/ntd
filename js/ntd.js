@@ -25,6 +25,7 @@ $(function renderPagina(){
      });
      });
      /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+     /* Agregar comentario GIT*/
 
      var template;
      $.ajax({ url: 'js/templates/comentarios.mst',
