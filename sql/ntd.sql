@@ -211,3 +211,8 @@ ALTER TABLE `producto`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+/*Agregue la tabla nueva seccion */
+/*Agregue la columna "titulo" a la nueva tabla*/
+/*Agregue la columna "descripcion" a la nueva tabla*/

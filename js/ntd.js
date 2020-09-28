@@ -1,6 +1,7 @@
 $(document).ready(function(){
   "use strict";
 /*Funcion para renderizar la página*/
+
 /*Botón que muestra la nueva sección de la página*/
 
 $(function renderPagina(){
@@ -27,6 +28,7 @@ $(function renderPagina(){
      });
      });
      /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+     
      /* Agregar comentario GIT*/
 
      var template;
@@ -110,7 +112,8 @@ $('#AdminUsuarios').click(function(){
      renderPagina();
    });
  });
-  /* ---------------------------------------------------------------------------------------------------------------*/
+  /*Funcion categoria*/
+ /* ---------------------------------------------------------------------------------------------------------------*/
   $('.eliminarCategoria').click(function(){
    event.preventDefault();
      $.get("index.php?action=eliminar_categoria",{ id_categoria:$(this).attr("data-idcategoria")}, function(data){
