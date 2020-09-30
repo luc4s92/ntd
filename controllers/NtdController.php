@@ -6,7 +6,7 @@ include_once 'models/NtdModel.php';
 class NtdController   {
 // Función que muestra la nueva sección de la página
 // Función que muestra por items la nuueva sección
-// Función de test
+
 
   function __construct() {
     $this->modelo = new NtdModel();
